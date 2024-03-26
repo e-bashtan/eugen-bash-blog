@@ -25,9 +25,9 @@ export const HeaderNav: React.FC<{ header: HeaderType }> = ({ header }) => {
         .join(' ')}
     >
       {navItems.map(({ link }, i) => {
-        return <CMSLink key={i} {...link} appearance="none" />
+        return <CMSLink key={i} {...link}  />
       })}
-      {user && <Link href="/account">Моя учетка</Link>}
+      {/* {user && <Link href="/account">Моя учетка</Link>} */}
       {/*
         // Uncomment this code if you want to add a login link to the header
         {!user && (

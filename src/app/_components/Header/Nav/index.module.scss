@@ -11,6 +11,9 @@
 
   > * {
     text-decoration: none;
+    .span {
+      color: white;
+    }
   }
 }
 
@@ -18,3 +21,4 @@
   opacity: 0;
   visibility: hidden;
 }
+
