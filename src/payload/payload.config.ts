@@ -3,6 +3,8 @@ import { mongooseAdapter } from '@payloadcms/db-mongodb' // database-adapter-imp
 import type { GenerateTitle } from '@payloadcms/plugin-seo/types'
 
 import { payloadCloud } from '@payloadcms/plugin-cloud'
+import { cloudStorage } from '@payloadcms/plugin-cloud-storage'
+import { s3Adapter } from '@payloadcms/plugin-cloud-storage/s3'
 // import formBuilder from '@payloadcms/plugin-form-builder'
 import nestedDocs from '@payloadcms/plugin-nested-docs'
 import redirects from '@payloadcms/plugin-redirects'
@@ -23,6 +25,19 @@ import BeforeLogin from './components/BeforeLogin'
 import { Footer } from './globals/Footer'
 import { Header } from './globals/Header'
 import { Settings } from './globals/Settings'
+
+const adapter = s3Adapter({
+  bucket: process.env.S3_BUCKET,
+  config: {
+    credentials: {
+      accessKeyId: process.env.S3_ACCESS_KEY_ID,
+      secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
+    },
+    endpoint: process.env.S3_ENDPOINT,
+    region: process.env.S3_REGION,
+    // ... Other S3 configuration
+  },
+})
 
 const generateTitle: GenerateTitle = () => {
   return 'Payload Public Demo'
@@ -102,5 +117,12 @@ export default buildConfig({
       uploadsCollection: 'media',
     }),
     payloadCloud(),
+    cloudStorage({
+      collections: {
+        media: {
+          adapter: adapter, // see docs for the adapter you want to use
+        },
+      },
+    }),
   ],
 })

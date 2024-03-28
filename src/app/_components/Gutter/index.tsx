@@ -12,7 +12,7 @@ type Props = {
   right?: boolean
 }
 
-export const Gutter: React.FC<Props> = forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const Gutter = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const { children, className, left = true, right = true } = props
 
   return (

@@ -29,6 +29,7 @@ export const Media: CollectionConfig = {
   ],
   slug: 'media',
   upload: {
-    staticDir: path.resolve(__dirname, '../../../media'),
+    // staticDir: path.resolve(__dirname, '../../../media'),
+    disableLocalStorage: true,
   },
 }
