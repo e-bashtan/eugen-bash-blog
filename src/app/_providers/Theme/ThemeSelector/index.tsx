@@ -40,9 +40,9 @@ export const ThemeSelector: React.FC = () => {
           onChange={(e) => onThemeChange(e.target.value as Theme & 'auto')}
           ref={selectRef}
         >
-          <option value="auto">Авто</option>
-          <option value="light">День</option>
-          <option value="dark">Ночь</option>
+          <option value="auto">Auto</option>
+          <option value="light">Day</option>
+          <option value="dark">Night</option>
         </select>
         <div className={classes.selectIcon}>
           <Chevron className={classes.iconUp} />

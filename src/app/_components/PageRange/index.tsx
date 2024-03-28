@@ -9,12 +9,12 @@ const defaultLabels = {
 
 const defaultCollectionLabels = {
   posts: {
-    plural: 'Посты',
-    singular: 'Пост',
+    plural: 'posts',
+    singular: 'post',
   },
   projects: {
-    plural: 'Проекты',
-    singular: 'Проект',
+    plural: 'projects',
+    singular: 'project',
   },
 }
 
@@ -47,10 +47,10 @@ export const PageRange: React.FC<{
 
   return (
     <div className={[className, classes.pageRange].filter(Boolean).join(' ')}>
-      {(typeof totalDocs === 'undefined' || totalDocs === 0) && 'Ничего нету.'}
+      {(typeof totalDocs === 'undefined' || totalDocs === 0) && 'Search produced no results.'}
       {typeof totalDocs !== 'undefined' &&
         totalDocs > 0 &&
-        `Показано ${indexStart} - ${indexEnd} of ${totalDocs} ${totalDocs > 1 ? plural : singular}`}
+        `Showing ${indexStart} - ${indexEnd} of ${totalDocs} ${totalDocs > 1 ? plural : singular}`}
     </div>
   )
 }

@@ -31,7 +31,7 @@ export async function Footer() {
           {navItems.map(({ link }, i) => {
             return <CMSLink key={i} {...link} />
           })}
-          <Link href="/admin">Кабинет</Link>
+          <Link href="/admin">Account</Link>
         </nav>
       </Gutter>
     </footer>

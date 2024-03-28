@@ -12,16 +12,16 @@ import classes from './index.module.scss'
 
 const collectionLabels = {
   pages: {
-    plural: 'Страницы',
-    singular: 'Страница',
+    plural: 'Pages',
+    singular: 'Page',
   },
   posts: {
-    plural: 'Посты',
-    singular: 'Пост',
+    plural: 'Posts',
+    singular: 'Post',
   },
   projects: {
-    plural: 'Проекты',
-    singular: 'Проект',
+    plural: 'Projects',
+    singular: 'Project',
   },
 }
 
